@@ -24,6 +24,7 @@ monthSelectlist(){
 }
 
 
+
 //document.getElementById("month")はタグを確認するだけ
 //valueはそのタグの値を示す
 
