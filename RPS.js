@@ -61,10 +61,23 @@ function RPS(){
             break;
     }
     let enemyHand = choices[Math.floor(Math.random() * choices.length)];
+    switch(enemyHand){
+        case "gu":
+             enemyImage.src = "https://image2.b-ch.com/ttl2/5570/5570012a.jpg?impolicy=fitin&ww=640&hh=380";
+            break;
+        case "choki":
+            enemyImage.src = "https://profile.yoshimoto.co.jp/assets/data/profile/503/64234965753faad89c53d6dedf6a43747741e2ce.jpg";
+            break;
+        case "pa":
+            enemyImage.src = "https://neoapo.com/images/character/1952/931ceb74927861dd9592efcc62c90f86.png";
+            break;
+        default:
+            break;
+    }
     
 })
     gameCountainer.appendChild(image);
-
+    gameCountainer.appendChild(enemyImage);
 
     //forEach　配列など複数のデータがあるもの使える。全部やる関数。
     //配列.forEach(配列の中身 => {命令})
