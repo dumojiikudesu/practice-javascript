@@ -1,3 +1,27 @@
+const gameSelect = document.getElementById('game-select');
+const select = document.createElement("select");
+    select.name = "games";
+    select.id = "game-select";
+    const options = [
+        {value: "",text:"--ゲームを選択してください--"},
+        {value: "clicker",text:"クリッカーゲーム"},
+        {value: "number-guess",text:"数当てゲーム"}
+    ];
+    options.forEach(optionData =>{
+        const option = document.createElement("option");
+        option.value =optionData.value;
+        option.textContent = optionData.text;
+        select.appendChild(option);
+    });
+gameSelect.appendChild(select);
+
+
+
+
+
+
+
+
 const gameSelector = document.getElementById('game-select');
 const gameContainer = document.getElementById("game-container")
 gameSelector.addEventListener('change', function(){
@@ -75,25 +99,27 @@ function startNumberGuessGame(){
     input.placeholder = '好きな数字を入力してください (1~100)';
     gameContainer.appendChild(message);
     gameContainer.appendChild(input)
-
     let button = document.createElement("button");
     button.textContent = "確認"
 
-    button.addEventListener("click",function(){
-        if (randamNumber == parseInt(input.value)){
-            message.textContent = "正解♡"
-        }else{
-            message.textContent = "違う(´;ω;｀)"
-        }
-    })
+    //button.addEventListener("click",function(){
+      //  if (randamNumber == parseInt(input.value)){
+           // message.textContent = "正解♡"
+        //}else{
+          //  message.textContent = "違う(´;ω;｀)"
+        //}
+    //})
+
+
     button.addEventListener("click",function(){
         const val = parseInt(input.value)
     if (randamNumber == val){
             message.textContent = "正解！"
         
-    }else if(randamNumber > val){
+    }else if (randamNumber > val){
         message.textContent = "ちっさ"
-    }else(randamNumber < val)
+    
+    }else (randamNumber < val)
         message.textContent = "大きい"
     
  
