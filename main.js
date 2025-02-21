@@ -91,12 +91,12 @@ function ClickCounterGame(){
 function startNumberGuessGame(){
     const gameContainer = document.getElementById("game-container");
 
-    const randamNumber = Math.floor(Math.random() * 10) + 1
+    const randamNumber = Math.floor(Math.random() * 100) + 1;
     let message = document.createElement("p");
     //message.textContent = randamNumber;
-    let input = document.createElement('input');
-    input.type = 'number';
-    input.placeholder = '好きな数字を入力してください (1~100)';
+    let input = document.createElement("input");
+    input.type = "number";
+    input.placeholder = "好きな数字を入力してください (1 ~ 100)";
     gameContainer.appendChild(message);
     gameContainer.appendChild(input)
     let button = document.createElement("button");
@@ -117,19 +117,14 @@ function startNumberGuessGame(){
             message.textContent = "正解！"
         
     }else if (randamNumber > val){
-        message.textContent = "ちっさ"
+        message.textContent = "小さい"
     
     }else (randamNumber < val)
         message.textContent = "大きい"
     
- 
     })
     gameContainer.appendChild(button);
 
-    let count = 0
-    const countDisplay = document.createElement("p");
-    countDisplay.textContent = `試行回数 : ${count}`;
-    gameContainer.appendChild(countDisplay);
 }
 //startNumberGuessGame();
 
